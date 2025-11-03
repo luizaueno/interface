@@ -1,30 +1,20 @@
 
 import './App.css'
+import './index.css'
 
 function App() {
 
   return (
     <>
-      <div>
+      <div className='container'>
       <a href="techno.html"></a>
       <a href="destaques.html"></a>
-      <a href="newsletter.html"></a>
-      <a href="categorias.html"></a>
-      <a href="criarpost.html"></a>
-      <a href="escolhas.html"></a>
-      <a href="usuarios.html"></a>
-      <a href="revisao.html"></a>
-      <a href="comentarios.html"></a>
-      <a href="resultados.html"></a>
-      <a href="login.html"></a>
-      <a href="criarconta.html"></a>
-      <a href="postagens.html"></a>
 
       <header>
         <b>Habit</b>
         <a href="#">Ínicio</a>
         <a href="#">Páginas</a>
-        <a href="">Destaques</a>
+        <a href="destaques.html">Destaques</a>
         <a href="#">Assinar</a>
         <a href="#">Admin</a>
         <input type="text" placeholder="Buscar..." />
@@ -67,8 +57,8 @@ function App() {
           <p>Alimentação</p>
           <p>Social</p>
         </div>
-
-        <article>
+      </main>
+      <article>
           <h4 className="title-destaque">Postagens em Destaque</h4>
 
           <div className="destaque">
@@ -84,8 +74,6 @@ function App() {
             <h4>As Maiores Empresas por Receita</h4>
           </div>
         </article>
-      </main>
-
       <aside>
         <h4>Escolhas do editor</h4>
         <ul>

@@ -1,3 +1,6 @@
+import './App.css'
+import './index.css'
+
 function techno() {
     return (
     <div>
