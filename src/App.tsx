@@ -1,0 +1,112 @@
+
+import './App.css'
+
+function App() {
+
+  return (
+    <>
+      <div>
+      <a href="techno.html"></a>
+      <a href="destaques.html"></a>
+      <a href="newsletter.html"></a>
+      <a href="categorias.html"></a>
+      <a href="criarpost.html"></a>
+      <a href="escolhas.html"></a>
+      <a href="usuarios.html"></a>
+      <a href="revisao.html"></a>
+      <a href="comentarios.html"></a>
+      <a href="resultados.html"></a>
+      <a href="login.html"></a>
+      <a href="criarconta.html"></a>
+      <a href="postagens.html"></a>
+
+      <header>
+        <b>Habit</b>
+        <a href="#">Ínicio</a>
+        <a href="#">Páginas</a>
+        <a href="">Destaques</a>
+        <a href="#">Assinar</a>
+        <a href="#">Admin</a>
+        <input type="text" placeholder="Buscar..." />
+        <button>Buscar</button>
+        <button>Entrar</button>
+      </header>
+
+      <nav>
+        <h2>Navegue por tópicos de interesse</h2>
+        <p>Descubra conteúdos por categorias, posts em destaque e as escolhas do editor</p>
+        <button>Explorar categorias</button>
+        <button>Assine a newsletter</button>
+        <img src="https://placehold.jp/350x250.png?text=%20" alt="imagem placeholder nav" />
+      </nav>
+
+      <main>
+        <div className="categorias-title">
+          <h4>Categorias populares</h4>
+        </div>
+
+        <div className="cards">
+          <h4>Work</h4>
+          <h4>Books</h4>
+          <h4>Techno</h4>
+        </div>
+
+        <div className="categorias-geral">
+          <h4>Todas as categorias</h4>
+        </div>
+
+        <div className="lista-categorias">
+          <p>Negócios</p>
+          <p>Techno</p>
+          <p>Produtividade</p>
+          <p>Filmes</p>
+          <p>Lifestyle</p>
+          <p>Educação</p>
+          <p>Mailing</p>
+          <p>Ecommerce</p>
+          <p>Alimentação</p>
+          <p>Social</p>
+        </div>
+
+        <article>
+          <h4 className="title-destaque">Postagens em Destaque</h4>
+
+          <div className="destaque">
+            <p>31 Jul 2025 &bull; Destaque</p>
+            <img src="https://placehold.jp/150x150.png?text=%20" alt="imagem placeholder destaque 1" />
+            <h4>Erros de Design que Todos Devem Evitar</h4>
+            <p>3 min de leitura</p>
+          </div>
+
+          <div className="destaque-dois">
+            <p>31 Jul 2025 &bull; Destaque</p>
+            <img src="https://placehold.jp/150x150.png?text=%20" alt="imagem placeholder destaque 2" />
+            <h4>As Maiores Empresas por Receita</h4>
+          </div>
+        </article>
+      </main>
+
+      <aside>
+        <h4>Escolhas do editor</h4>
+        <ul>
+          <li>O uso negativo da internet</li>
+          <li>O segredo do brainstorm</li>
+          <li>Escalar para pequenos negócios</li>
+          <li>O futuro do trabalho remoto</li>
+        </ul>
+      </aside>
+
+      <footer>
+        <h4>Instagram</h4>
+        <h4>Work</h4>
+        <h4>Bags</h4>
+        <h4>Lamp</h4>
+        <h4>Books</h4>
+      </footer>
+      </div>
+  
+    </>
+  )
+}
+
+export default App
