@@ -1,6 +1,6 @@
 
 import './App.css'
-import './index.css'
+
 
 function App() {
 
@@ -21,20 +21,20 @@ function App() {
         <button>Buscar</button>
         <button>Entrar</button>
       </header>
-
-      <nav>
-        <h2>Navegue por tópicos de interesse</h2>
-        <p>Descubra conteúdos por categorias, posts em destaque e as escolhas do editor</p>
-        <button>Explorar categorias</button>
-        <button>Assine a newsletter</button>
-        <img src="https://placehold.jp/350x250.png?text=%20" alt="imagem placeholder nav" />
+      
+    <div className="principal">
+        <nav>
+          <h2>Navegue por tópicos de interesse</h2>
+          <p>Descubra conteúdos por categorias, posts em destaque e as escolhas do editor</p>
+          <button>Explorar categorias</button>
+          <button>Assine a newsletter</button>
+          <img src="https://placehold.jp/350x250.png?text=%20" alt="imagem placeholder nav" className='image'/>
       </nav>
 
       <main>
         <div className="categorias-title">
           <h4>Categorias populares</h4>
         </div>
-
         <div className="cards">
           <h4>Work</h4>
           <h4>Books</h4>
@@ -63,14 +63,14 @@ function App() {
 
           <div className="destaque">
             <p>31 Jul 2025 &bull; Destaque</p>
-            <img src="https://placehold.jp/150x150.png?text=%20" alt="imagem placeholder destaque 1" />
+            <img src="https://placehold.jp/150x150.png?text=%20" alt="imagem placeholder destaque 1" className='image' />
             <h4>Erros de Design que Todos Devem Evitar</h4>
             <p>3 min de leitura</p>
           </div>
 
           <div className="destaque-dois">
             <p>31 Jul 2025 &bull; Destaque</p>
-            <img src="https://placehold.jp/150x150.png?text=%20" alt="imagem placeholder destaque 2" />
+            <img src="https://placehold.jp/150x150.png?text=%20" alt="imagem placeholder destaque 2" className='image' />
             <h4>As Maiores Empresas por Receita</h4>
           </div>
         </article>
@@ -83,16 +83,16 @@ function App() {
           <li>O futuro do trabalho remoto</li>
         </ul>
       </aside>
-
+    </div>
       <footer>
         <h4>Instagram</h4>
         <h4>Work</h4>
         <h4>Bags</h4>
         <h4>Lamp</h4>
         <h4>Books</h4>
+        &copy; 2025 Meu site &bull; Meu Site
       </footer>
       </div>
-  
     </>
   )
 }
