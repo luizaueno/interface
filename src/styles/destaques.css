@@ -1,0 +1,60 @@
+@import url('breakpoints.css');
+@import url('root.css');
+
+/* Filtros */
+.filtros {
+  display: flex;
+  gap: var(--space-xs);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.filtros a {
+  text-decoration: none;
+  color: black;
+  border: 1px solid var(--botao);
+  border-radius: 20px;
+  padding: 0.4rem 0.8rem;
+  font-size: var(--font-size);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filtros a:hover {
+  background-color: black;
+  color: white;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: center;
+}
+
+.card {
+  width: 250px;
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: var(--space-sm);
+  text-align: center;
+}
+
+
+.card img {
+  width: 200px;
+  border-radius: 6px;
+  margin-bottom: var(--space-xs);
+}
+
+.card h4 {
+  font-size: var(--font-size);
+  margin-bottom: var(--space-xs);
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #666;
+}
+

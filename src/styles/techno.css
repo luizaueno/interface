@@ -1,0 +1,76 @@
+@import url('breakpoints.css');
+@import url('root.css');
+
+/* Filtros */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+.filtros a {
+  text-decoration: none;
+  color: black;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 0.4rem 0.8rem;
+  font-size: var(--font-size);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filtros a:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-md);
+  padding: var(--space-md);
+}
+
+.card {
+  background-color: white;
+  border: 1px solid var(--imagens);
+  border-radius: 8px;
+  padding: var(--space-sm);
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+
+.card img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: var(--space-xs);
+}
+
+.card h4 {
+  font-size: var(--font-size);
+  margin-bottom: var(--space-xs);
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Botão "Carregar mais" */
+.botao {
+  display: flex;
+  padding: var(--space-sm);
+  background-color: white;
+  border: 1px solid var(--botao);
+  border-radius: 5px;
+  color: var(--botao);
+  cursor: pointer;
+}
+
+.botao:hover {
+  background-color: var(--botao);
+  color: white;
+}

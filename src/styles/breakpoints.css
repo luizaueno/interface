@@ -1,0 +1,112 @@
+@media (min-width: 320px) and (max-width: 480px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "article"
+      "aside"
+      "footer";
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  header a {
+    margin: var(--space-sm);
+  }
+
+  header input,
+  header button {
+    width: 80%;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+    margin-top: var(--space-sm);
+  }
+
+  .image {
+    width: 200px;
+  }
+}
+
+/* ======== TABLET (481px – 768px) ======== */
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "article"
+      "aside"
+      "footer";
+  }
+
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  header a {
+    margin: var(--space-sm);
+  }
+
+  header input,
+  header button {
+    margin: var(--space-sm);
+    width: auto;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .principal {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+/* ======== DESKTOP (769px – 1440px) ======== */
+@media (min-width: 769px) and (max-width: 1440px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "header header header"
+      "nav nav nav"
+      "main article aside"
+      "footer footer footer";
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .principal {
+    width: 1440px;
+    margin: 0 auto;
+  }
+}
