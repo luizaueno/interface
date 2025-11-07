@@ -1,232 +1,166 @@
 
-@import url('./root.css');
-
-header {
-  display: flex;
-  flex-wrap: wrap;
+/* Seção de introdução */
+.intro {
+  text-align: center;
+  padding: var(--space-md);
+  background-color: var(--fundo);
+  color: var(--texto);
 }
 
-header a {
-  text-decoration: none;
-  color: black;
+.intro h2 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-sm);
+}
+
+.intro p {
   font-size: var(--font-size);
+  margin-bottom: var(--space-sm);
 }
 
-
-header input {
-  padding: var(--space-xs);
-  border: 1px solid var(--imagens);
-  border-radius: 5px;
-  margin-top: var(--space-sm);
+.intro-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
 }
 
-header input:focus {
-  outline: none;
-  border: 1px solid var(--botao)
-}
-
-header button {
+.intro-actions button:first-of-type {
   padding: var(--space-sm);
-  margin: var(--space-xs);
-  margin-top: var(--space-sm);
-  background-color: white;
   border: 1px solid var(--botao);
   border-radius: 5px;
-  color: var(--botao);
-}
-
-header button:hover {
-  color: white;
   background-color: var(--botao);
+  color: white;
+  cursor: pointer;
 }
 
-.principal  {
-  border: 1px solid white ;
+.intro-actions button:last-of-type {
+  padding: var(--space-sm);
+  border: 1px solid var(--botao);
+  border-radius: 5px;
+  background-color: white;
+  color: var(--botao);
+  cursor: pointer;
+}
+
+.intro-actions button:hover {
+  background-color: #40746ecd;
+}
+
+.intro-actions button:last-of-type:hover {
+  background-color: var(--botao);
+  color: white;
+}
+
+
+.image {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  border-radius: 8px;
+  border: 1px solid var(--imagens);
+}
+
+/* Seção de categorias */
+.categorias {
+  padding: var(--space-md);
   background-color: var(--fundo);
 }
 
-
-nav h2 {
-  margin: var(--space-sm);
-}
-
-nav p {
-  font-size: var(--font-size);
-}
-
-nav button:first-of-type {
-  padding: var(--space-sm);
-  background-color: var(--botao);
-  border: 1px solid var(--botao);
+.cards h4 {
+  border: 1px solid var(--fundo);
   border-radius: 5px;
-  color: white;
-  margin: var(--space-sm);
-}
-
-nav button:first-of-type:hover {
-  background-color: #40746edf;
-  cursor: pointer;
-}
-
-nav button:last-of-type {
-  padding: var(--space-sm);
   background-color: white;
-  border: 1px solid var(--botao);
-  border-radius: 5px;
-  color: var(--botao);
-  margin: var(--space-sm);
-}
-
-nav button:last-of-type:hover {
-  cursor: pointer;
-  background-color: var(--botao);
-  color: white;
-}
-
-.image {
-  display: block;
-  margin: var(--space-xs);
-  width: 280px;
-  border: 1px solid var(--imagens);
-  border-radius: 5px;
-}
-
-.categorias-title {
   padding: var(--space-xs);
+  width: 120px;
 }
 
-.cards {
+.lista-categorias {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  width: fit-content;
+  gap: var(--space-xs);
 }
-
-.lista-categorias a,
-.cards a {
-  text-decoration: none;
-  outline: none;
-  color: black;
-}
-
-.lista-categorias a:hover,
-.cards a:hover {
-  text-decoration: underline;
-  outline: none;
-}
-
-.cards h4 {
-  display: flex;
-  align-items: flex-end;
-  border: 1px solid var(--fundo);
-  background-color: white;
-  border-radius: 0 8px 8px 0;
-  padding:  1rem;
-  margin: 0;
-  min-width: 200px;
-  min-height: 80px;
-}
-
-
-.categorias-geral {
-  padding: var(--space-xs)
-}
-
 .lista-categorias p {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border: 1px solid var(--fundo);
+  border-radius: 5px;
   background-color: white;
-  border-radius: 0 8px 8px 0;
-  padding:  var(--space-sm);
-  margin: var(--space-xs);
-  max-width: 120px;
-  max-height: 100px;
+  padding: var(--space-xs);
+  width: 120px;
+}
+
+.cards a,
+.lista-categorias a {
+  text-decoration: none;
+  color: var(--texto); 
+}
+
+.cards a:visited,
+.lista-categorias a:visited {
+  color: var(--texto); /* força a cor mesmo se o link já foi visitado */
+  text-decoration: none;
+}
+
+.cards a:hover h4,
+.lista-categorias a:hover p {
+  text-decoration: underline;
+}
+
+/* Seção de destaques */
+.destaques {
+  padding: var(--space-md);
+  background-color: var(--fundo);
 }
 
 .title-destaque {
-  padding: var(--space-xs);
+  font-size: 1.2rem;
+  margin-bottom: var(--space-sm);
+  color: var(--texto);
 }
-
 
 .destaque {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-md);
+    border: 1px solid var(--fundo);
+    border-radius: 5px;
+    background-color: white;
+    padding: var(--space-xs);
+    width: 250px;
+}
+
+.destaque img {
+  width: 100%;
+  max-width: 150px;
+  border-radius: 8px;
+  border: 1px solid var(--imagens);
+}
+
+/* Aside do editor */
+.editor {
+  padding: var(--space-md);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: var(--space-sm);
+}
+
+.editor h4 {
+  font-size: 1.2rem;
+  margin-bottom: var(--space-sm);
+  color: var(--texto);
+}
+
+.editor-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
   border: 1px solid var(--fundo);
+  border-radius: 5px;
   background-color: white;
-  border-radius: 0 8px 8px 0;
-  padding:  1rem;
-  margin: var(--space-xs);
-  max-width: 200px;
-  min-height: 80px;
-}
-
-.destaque .image {
-  width: 180px;
-}
-
-.destaque-dois {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid var(--fundo);
-  background-color: white;
-  border-radius: 0 8px 8px 0;
-  padding:  1rem;
-  margin: 0;
-  max-width: 200px;
-  min-height: 80px;
-}
-
-.destaque-dois .image {
-  width: 180px;
-}
-
-aside {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid var(--fundo);
-  background-color: white;
-  border-radius: 0 8px 8px 0;
-  padding:  1rem;
-  margin: var(--space-xs);
-  max-width: 200px;
-  min-height: 80px;
-}
-
-aside h4 {
-  padding:var(--space-xs)
-}
-
-aside li {
   padding: var(--space-xs);
-  list-style: disc;
-  list-style-position: inside;
+  width: 120px;
 }
-
-footer h4 {
-  display: flex;
-  flex-direction: column;
-  border: 2px solid var(--fundo);
-  background-color: white;
-  border-radius: 0 8px 8px 0;
-  padding:  var(--space-xs);
-  margin: var(--space-xs);
-  max-width: 90px;
-  max-height: 80px;
-}
-
-footer::after {
-  content: "© 2025 Meu site • Meu Site";
-  display: block;
-  flex-basis: 100%;
-  margin-top: 20px;
-  font-size: 12px;
-  color:rgb(193, 193, 193);
-  text-align: start;
-}
-

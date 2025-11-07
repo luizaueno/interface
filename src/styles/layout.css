@@ -1,0 +1,59 @@
+
+.header {
+  background-color: white;
+  color: var(--texto);
+  padding: var(--space-md);
+   display: flex;
+  flex-direction: column;  
+}
+
+.nav {
+  display: flex;
+  gap: var(--space-xs); 
+  margin-bottom: var(--space-md);
+}
+
+.nav a,.nav span {
+    color: var(--texto);
+    text-decoration: none;
+}
+
+.actions input {
+    outline: none;
+    max-width: 130px;
+    padding: var(--space-sm);
+    margin: var(--space-xs);
+    border: 1px solid var(--texto);
+    border-radius: 4px;
+}
+
+.actions input:focus {
+    border: 1px solid var(--botao);
+}
+/* Estilo para botões */
+.actions button {
+    padding: var(--space-sm);
+    margin: var(--space-xs);
+    border: 1px solid var(--botao);
+    color: var(--botao);
+    border-radius: 4px;
+    background-color: white;
+}
+
+.actions button:focus {
+  background-color: var(--botao);
+  color: white;
+  cursor: pointer;
+}
+
+.footer-list li {
+    border: 2px solid var(--fundo);
+    width: 100px;
+    padding: var(--space-sm);
+    margin: var(--space-xs);
+}
+
+.footer-copy {
+    font-size: 12px;
+    color: rgb(196, 195, 195);
+}

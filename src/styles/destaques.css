@@ -1,5 +1,3 @@
-@import url('breakpoints.css');
-@import url('root.css');
 
 /* Filtros */
 .filtros {
@@ -12,7 +10,7 @@
 .filtros a {
   text-decoration: none;
   color: black;
-  border: 1px solid var(--botao);
+  border: 1px solid white;
   border-radius: 20px;
   padding: 0.4rem 0.8rem;
   font-size: var(--font-size);

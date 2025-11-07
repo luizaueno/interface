@@ -1,7 +1,5 @@
-
 import React from "react";
-
-import "../styles/Techno.css";
+import '../styles/techno.css';
 
 const posts = [
   "Título da postagem 1",
@@ -15,11 +13,11 @@ const posts = [
   "Título da postagem 9"
 ];
 
-function Techno() {
+export default function Techno() {
   return (
-    
-      <main>
-        <h4>Categoria: Techno</h4>
+    <div className="principal">
+      <h4>Categoria: Techno</h4>
+
       <nav className="filtros">
         <a href="#">Popular</a>
         <a href="#">Mais recentes</a>
@@ -27,20 +25,20 @@ function Techno() {
         <a href="#">Produtividade</a>
       </nav>
 
-        <div className="cards">
-          {posts.map((titulo, idx) => 
-            <div key={idx} className="card">
-              <img src="https://placehold.jp/150x150.png?text=%20" alt={`Imagem ${titulo}`} />
-              <h4>{titulo}</h4>
-              <p>31 Jul 2025</p>
-            </div>
-          )}
-        </div>
-        <button type="button" className="
-        botao">Carregar mais</button>
-      </main>
+      <div className="cards">
+        {posts.map((titulo, idx) => (
+          <div key={idx} className="card">
+            <img
+              src="https://placehold.jp/150x150.png?text=%20"
+              alt={`Imagem ${titulo}`}
+            />
+            <h4>{titulo}</h4>
+            <p>31 Jul 2025</p>
+          </div>
+        ))}
+      </div>
 
+      <button type="button" className="botao">Carregar mais</button>
+    </div>
   );
 }
-
-export default Techno;

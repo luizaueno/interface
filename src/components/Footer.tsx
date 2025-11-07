@@ -1,17 +1,19 @@
-export default function Footer() {
-    return(
-        <>
-        <footer>
 
-        <h4>Instagram</h4>
-        <h4>Work</h4>
-        <h4>Bags</h4>
-        <h4>Lamp</h4>
-        <h4>Books</h4>
-         
-        
-        </footer>
-        </>
-    )
+export default function Footer() {
+  return (
+    <footer>
+      <ul className="footer-list">
+        <li>Instagram</li>
+        <li>Work</li>
+        <li>Bags</li>
+        <li>Lamp</li>
+        <li>Books</li>
+      </ul>
+       <div className="footer-copy">
+        © 2025 Meu Site •  Meu Site
+      </div>
+    </footer>
+  );
 }
-  
+
+

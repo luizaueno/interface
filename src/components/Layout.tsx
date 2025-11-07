@@ -1,35 +1,17 @@
-import { Link } from "react-router-dom";
-import '../styles/home.css';
 
-function Layout({ children }: { children: React.ReactNode }) {
+import { Outlet } from 'react-router-dom';
+import Header from './Header';
+import Footer from './Footer';
+import '../styles/layout.css';
+
+function Layout() {
   return (
-    <div>
-      <header>
-        <h1>Habit</h1>
-
-        <nav>
-          <Link to="/">Início</Link>
-          <Link to="/paginas">Páginas</Link>
-          <Link to="/destaques">Destaques</Link>
-          <Link to="/assinar">Assinar</Link>
-          <Link to="/admin">Admin</Link>
-        </nav>
-        <input type="text" placeholder="Buscar..." />
-        <button>Buscar</button>
-        <button>Entrar</button>
-      </header>
-
-      <main>
-        {children}
+    <div className="container">
+      <Header />
+      <main className="main">
+        <Outlet />
       </main>
-
-      <footer>
-        <p>Instagram</p>
-        <p>Work</p>
-        <p>Bags</p>
-        <p>Lamp</p>
-        <p>Books</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

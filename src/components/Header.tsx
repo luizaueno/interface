@@ -1,17 +1,25 @@
+import { Link } from 'react-router-dom'
+
+
 export default function Header() {
-    return(
-        <>
-        <header>
-        <b>Habit</b>
-        <a href="#">Ínicio</a>
-        <a href="#">Páginas</a>
-        <a href="">Destaques</a>
-        <a href="#">Assinar</a>
-        <a href="#">Admin</a>
+  return (
+    <header className='header'>
+      <div className='logo'><b>Habit</b></div>
+
+      <nav className='nav'>
+        <Link to="/">Início</Link>
+        <span>Páginas</span>
+        <Link to="/destaques">Destaques</Link>
+        <span>Assinar</span>
+        <span>Admin</span>
+      </nav>
+
+      <div className="actions">
         <input type="text" placeholder="Buscar..." />
         <button>Buscar</button>
         <button>Entrar</button>
-      </header>
-        </>
-    )
+    </div>
+    </header>
+      
+  );
 }
