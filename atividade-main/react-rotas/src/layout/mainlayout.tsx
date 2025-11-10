@@ -1,29 +1,18 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
-import Sidebar from "../components/Sidebar";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import { Outlet, Link } from "react-router-dom";
 
-const MainLayout: React.FC = () => {
+export default function Layout() {
   return (
-    <>
-      <Header />
-
-      <main className="container" style={{ paddingTop: 12 }}>
-        <div className="app-grid" style={{ display: "grid", gridTemplateColumns: "240px 1fr", gap: 20 }}>
-          <aside>
-            <Sidebar />
-          </aside>
-
-          <section className="main-content">
-            <Outlet />
-          </section>
-        </div>
-
-        <Footer />
+    <div>
+      <header>
+        <nav>
+          <Link to="/">Comentários</Link> |{" "}
+          <Link to="/editor">Editor</Link> |{" "}
+          <Link to="/usuario">Usuário</Link>
+        </nav>
+      </header>
+      <main>
+        <Outlet /> {/* Aqui as páginas vão renderizar */}
       </main>
-    </>
+    </div>
   );
-};
-
-export default MainLayout;
+}

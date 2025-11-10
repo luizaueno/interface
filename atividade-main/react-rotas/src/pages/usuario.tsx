@@ -69,4 +69,6 @@ const Usuarios: React.FC = () => {
   );
 };
 
-export default Usuarios;
+export function Usuario() {
+  return <h1>Página de Login</h1>;
+}

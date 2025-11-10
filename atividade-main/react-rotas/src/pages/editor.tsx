@@ -47,4 +47,6 @@ const Editor: React.FC = () => {
   );
 };
 
-export default Editor;
+export default function editor() {
+  return <h1>Página de Cadastro</h1>;
+}

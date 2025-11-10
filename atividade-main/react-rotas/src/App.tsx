@@ -1,27 +1,22 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Comentarios from './pages/comentarios';
-import Editor from './pages/editor';
-import Usuarios from './pages/usuario';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./layout/mainlayout";
+import Comentarios from "./pages/comentarios";
+import Editor from "./pages/editor";
+import {Usuario} from "./pages/usuario";
+import "./styles/root.css";
+import "./styles/breakpoints.css";
 
 function App() {
   return (
-    <Router>
-      <nav style={{ padding: '16px', background: '#eee', display: 'flex', gap: '12px' }}>
-        <Link to="/comentarios">Comentários</Link>
-        <Link to="/editor">Editor</Link>
-        <Link to="/usuarios">Usuários</Link>
-      </nav>
-
-      <div style={{ padding: '16px' }}>
-        <Routes>
-          <Route path="/comentarios" element={<Comentarios />} />
-          <Route path="/editor" element={<Editor />} />
-          <Route path="/usuarios" element={<Usuarios />} />
-          <Route path="/" element={<h1>Bem-vindo ao Dashboard</h1>} />
-        </Routes>
-      </div>
-    </Router>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Comentarios />} />
+          <Route path="editor" element={<Editor />} />
+          <Route path="usuario" element={<Usuario />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
