@@ -4,7 +4,7 @@ import './Dashboard.css';
 const Dashboard: React.FC = () => {
   return (
     <div className="dashboard-container">
-      {/* Header */}
+      {}
       <header className="header">
         <div className="header-left">
           <span className="header-item">HABIT</span>
@@ -19,7 +19,7 @@ const Dashboard: React.FC = () => {
       </header>
 
       <div className="dashboard-content">
-        {/* Left Sidebar */}
+        {}
         <aside className="sidebar">
           <h2 className="sidebar-title">Menu</h2>
           <div className="menu-section">
@@ -35,7 +35,7 @@ const Dashboard: React.FC = () => {
 
           <div className="divider"></div>
 
-          {/* Categories Section */}
+          {}
           <div className="categories-section">
             <h3 className="section-title">Categorias</h3>
             <div className="search-categories">Buecar categorias.</div>
@@ -52,7 +52,7 @@ const Dashboard: React.FC = () => {
 
           <div className="divider"></div>
 
-          {/* Editor Section */}
+          {}
           <div className="editor-section">
             <h3 className="section-title">Editor</h3>
             <div className="editor-list">
@@ -69,9 +69,9 @@ const Dashboard: React.FC = () => {
           </div>
         </aside>
 
-        {/* Main Content */}
+        {}
         <main className="main-content">
-          {/* Stats Section */}
+          {}
           <div className="stats-section">
             <div className="stat-card">
               <h3 className="stat-title">Poste</h3>
@@ -93,7 +93,7 @@ const Dashboard: React.FC = () => {
 
           <div className="divider"></div>
 
-          {/* Footer Links */}
+          {}
           <footer className="footer">
             <div className="social-links">
               <div className="social-link">Instagram</div>
