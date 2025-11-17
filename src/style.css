@@ -1,0 +1,31 @@
+:root{
+  /* valores de exemplo — ajuste para o seu design ou coloque no index.css global */
+  --header-height: 80px;
+  --footer-height: 80px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --color-bg-borda: #f3f3f3;
+  --color-bg: #ffffff;
+}
+
+/* Layout principal */
+.app-container {
+  display: flex;
+  /* calcula altura total subtraindo header + footer (mais robusto que um valor fixo) */
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  background-color: var(--color-bg-borda);
+}
+
+/* Área central (conteúdo) */
+.content {
+  flex: 1;
+  padding: var(--space-md);
+  background-color: var(--color-bg);
+}
+
+/* Ajuste do padding para telas maiores */
+@media (min-width: 768px) {
+  .content {
+    padding: var(--space-lg);
+  }
+}

@@ -1,0 +1,152 @@
+/* ============================ HEADER ============================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: var(--space-md);
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-bg-borda);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.topbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-md);
+  gap: var(--space-md);
+}
+
+.site-header .brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  font-weight: bold;
+  font-size: var(--font-size-h3);
+  line-height: 1;
+}
+
+.site-header .brand span {
+  display: inline-block;
+  line-height: 1;
+}
+
+.main-nav {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.main-nav .nav-link {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: var(--font-size-base);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 4px;
+  transition: all 0.16s ease;
+}
+
+.main-nav .nav-link:hover,
+.main-nav .nav-link:focus {
+  background-color: var(--color-bg-borda);
+  outline: 2px solid var(--color-button);
+  outline-offset: 2px;
+}
+
+.main-nav .nav-link[aria-current="page"],
+.main-nav .nav-link.active {
+  color: var(--color-button);
+  font-weight: bold;
+}
+
+.search-row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+  align-items: center;
+}
+
+.search-input {
+  min-width: 200px;
+  padding: var(--space-sm);
+  border: 1px solid var(--color-text-light);
+  border-radius: 4px;
+  font-size: var(--font-size-base);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.btn {
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-button);
+  border-radius: 4px;
+  background-color: var(--color-button);
+  color: white;
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: opacity 0.16s ease, transform 0.12s ease;
+}
+
+.btn:hover,
+.btn:focus {
+  opacity: 0.92;
+  transform: translateY(-1px);
+  outline: 2px solid var(--color-button);
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Breakpoints */
+@media (min-width: 768px) {
+  .topbar {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: var(--space-lg);
+    gap: var(--space-lg);
+  }
+
+  .brand {
+    flex: 0 0 auto;
+  }
+
+  .main-nav {
+    flex: 1 1 auto;
+    justify-content: center;
+    gap: var(--space-md);
+    white-space: nowrap;
+  }
+
+  .search-row {
+    flex: 0 0 auto;
+    width: auto;
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-nav .nav-link {
+    font-size: var(--font-size-base);
+  }
+
+  .search-input {
+    min-width: 300px;
+  }
+}
+
+/* Pequenos ajustes para acessibilidade de foco no teclado */
+.main-nav .nav-link:focus-visible,
+.btn:focus-visible,
+.search-input:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-button) 30%, transparent);
+  outline-offset: 2px;
+}

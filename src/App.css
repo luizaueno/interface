@@ -1,0 +1,273 @@
+:root{
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+
+  --color-bg: #ffffff;
+  --color-card-bg: #ffffff;
+  --color-bg-borda: #f4f5f6;
+  --color-button: #2e8b7b;
+  --color-text: #111827;
+  --color-text-light: #6b7280;
+
+  --header-height: 80px;
+  --footer-height: 90px;
+}
+
+/* Reset mínimo */
+* { box-sizing: border-box; }
+html,body,#root { height:100%; margin:0; font-family: Inter, system-ui, Arial; color:var(--color-text); background:#ffffff; }
+
+/* Layout principal: SIDEBAR (esquerda) + CONTENT (direita) - mobile-first */
+.app-container {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile: sidebar empilhada */
+  gap: var(--space-lg);
+  min-height: calc(100vh - var(--header-height));
+  padding: var(--space-md);
+}
+
+/* content mantém Header (fora), main e Footer */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* main - centraliza page-inner */
+.main { width: 100%; }
+
+/* Wrapper que centraliza e limita largura, aplicado dentro do main */
+.page-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 0;
+}
+
+/* Painel branco com borda arredondada e sombra leve */
+.panel {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-bg-borda);
+  border-radius: 8px;
+  padding: 18px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+/* Painel grande que engloba a area de estatísticas + conteúdo */
+.panel-full {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+/* Stats cards (no topo do painel) */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.stat-card {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-bg-borda);
+  border-radius: 8px;
+  padding: 18px;
+  text-align: center;
+}
+.stat-card .label { font-size: 0.9rem; color: var(--color-text-light); margin-bottom:6px; }
+.stat-card .value { font-weight:700; font-size:1.25rem; }
+
+/* Layout de conteúdo com sidebar interior + painel central */
+.content-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+/* Menu lateral secundário (dentro do painel) */
+.side-menu-panel {
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-bg-borda);
+  border-radius: 8px;
+  padding: 16px;
+  height: 440px; /* altura do mock */
+}
+
+/* Tabela/lista padrão */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead th {
+  background: #eef0f3;
+  padding: 12px;
+  font-weight: 700;
+  text-align: left;
+  border-bottom: 1px solid var(--color-bg-borda);
+  color: var(--color-text);
+}
+
+.table tbody td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--color-bg-borda);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.align-right {
+  text-align: right !important;
+}
+
+.old-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+.table thead th {
+  text-align: left;
+  padding: 12px 8px;
+  font-weight:700;
+  color:var(--color-text);
+  border-bottom:1px solid var(--color-bg-borda);
+}
+.table tbody td {
+  padding: 12px 8px;
+  border-bottom: 1px solid var(--color-bg-borda);
+  color: var(--color-text);
+}
+
+/* Cards grid (dashboard) */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+/* Tag buttons/links no rodapé do painel mock */
+.footer-tags {
+  display:flex;
+  gap:12px;
+  margin-top:20px;
+}
+.footer-tag {
+  padding:10px 20px;
+  border:1px solid var(--color-bg-borda);
+  background: #fff;
+  border-radius:12px;
+}
+
+/* Botão padrão */
+.btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--color-button);
+  background: transparent;
+  color: var(--color-button);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.btn + .btn {
+  margin-left: 8px;
+}
+.btn.primary {
+  background: var(--color-button);
+  color: white;
+}
+
+/* Mobile-first breakpoints */
+
+/* ===== BREAKPOINT: Celulares pequenos (320px - 480px) ===== */
+/* Base CSS já está otimizado para mobile */
+
+/* ===== BREAKPOINT: Celulares médios/grandes (481px - 767px) ===== */
+@media (min-width: 481px) {
+  .stats-row { 
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+/* ===== BREAKPOINT: Tablets (768px - 1023px) ===== */
+@media (min-width: 768px) {
+  .app-container {
+    grid-template-columns: 220px 1fr; /* Sidebar lateral */
+    padding: var(--space-lg);
+  }
+
+  .page-inner { 
+    padding: 24px 0; 
+  }
+
+  .stats-row { 
+    grid-template-columns: repeat(4, 1fr); 
+  }
+
+  .content-grid {
+    grid-template-columns: 240px 1fr;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== BREAKPOINT: Notebooks/Desktops (1024px - 1439px) ===== */
+@media (min-width: 1024px) {
+  .app-container {
+    grid-template-columns: 250px 1fr;
+  }
+
+  .page-inner { 
+    max-width: 1200px; 
+  }
+
+  .cards-grid { 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+  }
+
+  .content-grid {
+    grid-template-columns: 260px 1fr;
+    gap: 24px;
+  }
+}
+
+/* ===== BREAKPOINT: Monitores grandes (1440px+) ===== */
+@media (min-width: 1440px) {
+  .page-inner {
+    max-width: 1400px;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Ajustes responsivos: empilha painel interno no mobile */
+@media (max-width: 767px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+  .side-menu-panel { height: auto; margin-bottom: 12px; }
+  .stats-row { grid-template-columns: 1fr; }
+  .cards-grid { grid-template-columns: 1fr; }
+}
+
+/* Responsividade para tablets */
+@media (max-width: 1023px) {
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .content-grid {
+    grid-template-columns: 220px 1fr;
+    gap: 16px;
+  }
+}
