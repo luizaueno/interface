@@ -39,7 +39,7 @@ const Editor: React.FC = () => {
               />
             </div>
 
-            <table className="table editor-table" role="table" aria-label="Lista de escolhas do editor">
+            <table className="editor-table" role="table" aria-label="Lista de escolhas do editor">
               <thead>
                 <tr>
                   <th>Post</th>

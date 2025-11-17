@@ -55,14 +55,38 @@
   font-weight: 700;
   border-bottom: 1px solid var(--color-bg-borda);
 }
+
+/* Sobrescrever alinhamento à esquerda para coluna de ações */
+.editor-table thead th.align-right {
+  text-align: right !important;
+}
+
 .editor-table tbody td {
   padding: 14px 8px;
   border-bottom: 1px solid var(--color-bg-borda);
   vertical-align: middle;
+  text-align: left;
+}
+
+/* Sobrescrever alinhamento à esquerda para coluna de ações */
+.editor-table tbody td.align-right {
+  text-align: right !important;
+}
+
+/* Sobrescrever alinhamento à esquerda para coluna de ações */
+.editor-table tbody td.align-right {
+  text-align: right !important;
+}
+
+.editor-container .align-right {
+  text-align: right !important;
 }
 
 /* actions column width control */
-.editor-table td:last-child { width: 160px; }
+.editor-table td:last-child { 
+  width: 160px; 
+  text-align: right !important;
+}
 
 /* button style (consistent with App.css but scoped) */
 .btn {

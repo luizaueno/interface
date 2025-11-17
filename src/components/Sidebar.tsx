@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Sidebar.css";
 
 const Sidebar: React.FC = () => {
@@ -8,12 +9,13 @@ const Sidebar: React.FC = () => {
 
       <nav aria-label="Navegação do menu">
         <ul className="sidebar-list">
-          <li className="sidebar-item"><a className="sidebar-link" href="#">Categorias</a></li>
-          <li className="sidebar-item"><a className="sidebar-link" href="#">Criar Post</a></li>
-          <li className="sidebar-item"><a className="sidebar-link" href="/editor">Escolhas do Editor</a></li>
-          <li className="sidebar-item"><a className="sidebar-link" href="/usuarios">Usuários</a></li>
-          <li className="sidebar-item"><a className="sidebar-link" href="#">Fila de revisão</a></li>
-          <li className="sidebar-item"><a className="sidebar-link" href="/comentarios">Fila de comentários</a></li>
+          <li className="sidebar-item"><Link className="sidebar-link" to="/">Dashboard</Link></li>
+          <li className="sidebar-item"><Link className="sidebar-link" to="#">Categorias</Link></li>
+          <li className="sidebar-item"><Link className="sidebar-link" to="#">Criar Post</Link></li>
+          <li className="sidebar-item"><Link className="sidebar-link" to="/editor">Escolhas do Editor</Link></li>
+          <li className="sidebar-item"><Link className="sidebar-link" to="/usuarios">Usuários</Link></li>
+          <li className="sidebar-item"><Link className="sidebar-link" to="#">Fila de revisão</Link></li>
+          <li className="sidebar-item"><Link className="sidebar-link" to="/comentarios">Fila de comentários</Link></li>
         </ul>
       </nav>
     </aside>
