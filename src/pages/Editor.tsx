@@ -1,98 +1,90 @@
-import React from 'react';
-import './PostEditor.css';
+import React, { useState } from "react";
+import "./Editor.css";
 
-const PostEditor: React.FC = () => {
+type Post = { id: number; title: string; scheduled?: boolean };
+
+const initialPosts: Post[] = [
+  { id: 1, title: "Post #1", scheduled: false },
+  { id: 2, title: "Post #2", scheduled: true },
+  { id: 3, title: "Post #3", scheduled: false },
+  { id: 4, title: "Post #4", scheduled: true },
+  { id: 5, title: "Post #5", scheduled: false },
+];
+
+const Editor: React.FC = () => {
+  const [posts, setPosts] = useState<Post[]>(initialPosts);
+  const [query, setQuery] = useState("");
+
+  const toggleSchedule = (id: number) => {
+    setPosts((prev) => prev.map(p => p.id === id ? { ...p, scheduled: !p.scheduled } : p));
+  };
+
+  const filtered = posts.filter(p => p.title.toLowerCase().includes(query.toLowerCase()));
+
   return (
-    <div className="post-editor-container">
-      {}
-      <header className="header">
-        <div className="header-left">
-          <span className="header-item">HABIT</span>
-          <span className="header-item">Início</span>
-          <span className="header-item">Páginas</span>
-          <span className="header-item">Destaques</span>
+    <div className="editor-container">
+      <section className="panel" aria-labelledby="editor-heading">
+        <h3 id="editor-heading">Escolhas do Editor</h3>
+
+            <div className="search-wrapper">
+              <label htmlFor="editor-search" className="visually-hidden">Buscar posts</label>
+              <input
+                id="editor-search"
+                className="search-input"
+                type="text"
+                placeholder="Buscar posts..."
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                aria-label="Buscar posts"
+              />
+            </div>
+
+            <table className="table editor-table" role="table" aria-label="Lista de escolhas do editor">
+              <thead>
+                <tr>
+                  <th>Post</th>
+                  <th className="align-right">Ação</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {filtered.map((p) => (
+                  <tr key={p.id}>
+                    <td>{p.title}</td>
+                    <td className="align-right">
+                      {p.scheduled ? (
+                        <button
+                          className="btn"
+                          onClick={() => toggleSchedule(p.id)}
+                          aria-label={`Remover ${p.title} das escolhas do editor`}
+                        >
+                          Remover
+                        </button>
+                      ) : (
+                        <button
+                          className="btn"
+                          onClick={() => toggleSchedule(p.id)}
+                          aria-label={`Agendar ${p.title}`}
+                        >
+                          Agendar
+                        </button>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+
+                {filtered.length === 0 && (
+                  <tr>
+                    <td colSpan={2} style={{ padding: 16, color: "var(--color-text-light)" }}>
+                      Nenhum post encontrado.
+                    </td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </section>
         </div>
-        <div className="header-right">
-          <span className="header-item">Assinar</span>
-          <span className="header-item">Admin</span>
-        </div>
-      </header>
-
-      <div className="editor-content">
-        {}
-        <aside className="sidebar">
-          <h2 className="sidebar-title">Menu</h2>
-          <ul className="menu-list">
-            <li className="menu-item">Categorias</li>
-            <li className="menu-item">Criar Post</li>
-            <li className="menu-item">Escolhas do Editor</li>
-            <li className="menu-item">Usuários</li>
-            <li className="menu-item">Fila de revisão</li>
-            <li className="menu-item">Fila de comentários</li>
-          </ul>
-
-          <div className="divider"></div>
-
-          {}
-          <footer className="sidebar-footer">
-            <div className="social-links">
-              <div className="social-link">Instagram</div>
-              <div className="social-link">Work</div>
-              <div className="social-link">Bags</div>
-              <div className="social-link">Lamp</div>
-              <div className="social-link">Books</div>
-            </div>
-            <div className="copyright">
-              © 2007 Mercedes-Mitworks
-            </div>
-          </footer>
-        </aside>
-
-        {}
-        <main className="main-editor">
-          {}
-          <section className="editor-section">
-            <h2 className="section-title">Preço</h2>
-            <h3 className="subsection-title">Texto</h3>
-            <div className="text-preview">
-              Esteve aqui... (Editor simulado)
-            </div>
-          </section>
-
-          <div className="divider"></div>
-
-          {}
-          <section className="editor-section">
-            <h2 className="section-title">Descrição</h2>
-            <div className="description-items">
-              <div className="description-item">Categorias e tags</div>
-              <div className="description-item">Upload de imagem de capa</div>
-            </div>
-            
-            <div className="action-buttons">
-              <button className="btn btn-secondary">Salvar rascunho</button>
-              <button className="btn btn-secondary">Enviar para revisão</button>
-              <button className="btn btn-primary">Publicar (admin)</button>
-            </div>
-          </section>
-
-          <div className="divider"></div>
-
-          {}
-          <section className="editor-section">
-            <h2 className="section-title">Indicador</h2>
-            <div className="indicator-links">
-              <span className="indicator-link">Instagram</span>
-              <span className="indicator-link">Work</span>
-              <span className="indicator-link">Bags</span>
-              <span className="indicator-link">Lamp</span>
-              <span className="indicator-link">Books</span>
-            </div>
-          </section>
-        </main>
-      </div>
-    </div>
   );
 };
 
-export default PostEditor;
+export default Editor;
