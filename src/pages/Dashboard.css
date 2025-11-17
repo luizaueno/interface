@@ -1,0 +1,164 @@
+/* ============================ DASHBOARD ============================ */
+.dashboard {
+  padding: var(--space-lg);
+  background: var(--color-bg-borda);
+  min-height: 100vh;
+}
+
+.dash-header {
+  margin-bottom: var(--space-lg);
+}
+
+.dash-header h1 {
+  font-size: var(--font-size-h1);
+  color: var(--color-text);
+}
+
+.dash-grid {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: 1fr;
+}
+
+/* ============================ CARDS / PAINÉIS ============================ */
+.card,
+.dash-card {
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-bg-borda);
+  border-radius: 8px;
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.dash-card h2 {
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+}
+
+.dash-card button {
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-button);
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.dash-card button:hover,
+.dash-card button:focus {
+  opacity: 0.9;
+  outline: 2px solid var(--color-button);
+  outline-offset: 2px;
+}
+
+.stats {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.stat {
+  flex: 1 1 120px;
+  text-align: center;
+  padding: var(--space-sm);
+  border: 1px solid var(--color-bg-borda);
+  border-radius: 8px;
+  background-color: var(--color-bg);
+}
+
+/* ============================ POSTS / TABELAS ============================ */
+.post-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-bg-borda);
+}
+
+.post-item:last-child {
+  border-bottom: none;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--space-md);
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid var(--color-bg-borda);
+  color: var(--color-text);
+}
+
+.table th {
+  font-weight: bold;
+}
+
+.table td:last-child {
+  text-align: right;
+}
+
+/* ============================ BOTÕES ============================ */
+.action-btn {
+  padding: 6px 12px;
+  border: 1px solid var(--color-button);
+  border-radius: 8px;
+  background-color: white;
+  color: var(--color-button);
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-left: 6px;
+}
+
+.action-btn:hover,
+.action-btn:focus {
+  background-color: var(--color-button);
+  color: white;
+}
+
+/* Corrige alinhamento dos botões nas linhas */
+.post-item div:last-child,
+.table td:last-child {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* ============================ LAYOUT RESPONSIVO ============================ */
+/* Breakpoint tablet */
+@media (min-width: 768px) {
+  .dash-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: var(--space-md);
+  }
+
+  .stats {
+    justify-content: space-between;
+  }
+}
+
+/* Breakpoint desktop */
+@media (min-width: 1024px) {
+  .dash-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .stats {
+    gap: var(--space-lg);
+  }
+
+  .container {
+    padding: var(--space-lg) var(--space-xl);
+  }
+}
